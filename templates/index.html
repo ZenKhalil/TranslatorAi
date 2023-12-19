@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtitle Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">Subtitle Translator</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Welcome to Subtitle Translator</h1>
+            <p>Translate your .ass subtitle files easily into your desired language.</p>
+
+            <!-- Progress Bar Container -->
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form" id="translation-form" onsubmit="return onSubmit()">
+                <input type="file" name="file" id="file" required>
+                <label for="language">Target Language:</label>
+                <select name="language" id="language" required>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Malay">Malay</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Ukrainian">Ukrainian</option>
+                    <option value="Vietnamese">Vietnamese</option>
+            </select>
+                <button type="submit">Translate</button>
+            </form>
+            <div id="feedback"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Subtitle Translator</p>
+        </div>
+    </footer>
+</body>
+</html>
